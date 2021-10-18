@@ -20,7 +20,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn>
+      <v-btn color="primary"  @click="overlay = !overlay">
       <v-icon left>mdi-account-circle</v-icon>
          Login
       </v-btn>
@@ -28,22 +28,41 @@
 
     <v-main>
       <Board/>
+
+      <v-overlay
+          :absolute="absolute"
+          :opacity="opacity"
+          :value="overlay"
+        >
+          <SignIn/>
+          <v-btn
+            color="primary"
+            @click="overlay = false"
+          >
+            Cancel
+          </v-btn>
+      </v-overlay>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import Board from './components/Board';
+import SignIn from './components/SignIn.vue';
 
 export default {
   name: 'App',
 
   components: {
     Board,
+    SignIn,
   },
 
   data: () => ({
-    //
+    absolute: true,
+    opacity: 0.7,
+    overlay: false,
   }),
 };
 </script>
+

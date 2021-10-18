@@ -2,7 +2,7 @@
   <v-container>
       <v-layout row wrap> 
         <v-flex xs12 sm6 md4 lg3 v-for="element in cards" :key="element.title">
-            <v-card :loading="loading" class="ma-3" max-width="374">
+            <v-card :loading="loading" class="ma-3" max-width="374" height=280px>
                 <div v-if="element.type == 'text'">
                     <v-card-title><v-icon left>mdi-message-text</v-icon>{{ element.title }} </v-card-title>
                     <v-card-text>
