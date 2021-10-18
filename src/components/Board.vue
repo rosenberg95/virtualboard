@@ -18,7 +18,12 @@
                     ></v-img>
                 </div>
                 <div v-else-if="element.type == 'vid'">
-                    {{element.vidurl}}
+                    <youtube 
+                    fitParent="true"
+                    :video-id="element.vidurl"
+                    ref="youtube" 
+                    @playing="playing"
+                    ></youtube>
                 </div>
                 
             </v-card> 
@@ -32,6 +37,7 @@
   </v-container>
 </template>
 
+<script src="vue-youtube/dist/vue-youtube.js"></script>
 <script>
   export default {
     name: 'Board',
@@ -58,7 +64,7 @@
                 title: 'Titel på video', 
                 text: '',
                 imgurl: '',
-                vidurl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', 
+                vidurl: 'dQw4w9WgXcQ', 
                 user: "bruger", 
                 date: "Dato"}
         ]
