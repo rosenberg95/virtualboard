@@ -14,8 +14,8 @@
                 <div v-else-if="element.type == 'img'">
                     <v-img
                     height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-                    >{{element.imgurl}}</v-img>
+                    :src="element.imgurl"
+                    ></v-img>
                 </div>
                 <div v-else-if="element.type == 'vid'">
                     {{element.vidurl}}
