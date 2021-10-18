@@ -20,28 +20,36 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn color="primary"  @click="overlay = !overlay">
+      <v-btn color="primary"  @click="signUp = !signUp">
       <v-icon left>mdi-account-circle</v-icon>
-         Login
+         Opret
       </v-btn>
+
+
     </v-app-bar>
 
     <v-main>
-      <Board/>
-
-      <v-overlay
+      <v-row justify="center">
+        <v-overlay
           :absolute="absolute"
-          :opacity="opacity"
-          :value="overlay"
+          :opacity="0.7"
+          :value="signUp"
         >
-          <SignIn/>
-          <v-btn
+          <SignUp @clicked="onClickChild"></SignUp>
+   
+          <!-- <SignUp/>
+          <div>
+            <child @clicked="onClickChild"></child>
+          </div> -->
+          <!-- <v-btn
             color="primary"
-            @click="overlay = false"
+            @click="signUp = false"
           >
-            Cancel
-          </v-btn>
+            Luk
+          </v-btn> -->
       </v-overlay>
+      </v-row>
+      <Board/>
     </v-main>
     
     <v-footer
@@ -64,27 +72,26 @@
 
 <script>
 import Board from './components/Board';
-import SignIn from './components/SignIn.vue';
+import SignUp from './components/SignUp.vue';
 
 export default {
   name: 'App',
 
   components: {
     Board,
-    SignIn,
+    SignUp,
   },
 
   data: () => ({
     absolute: true,
     opacity: 0.7,
-    overlay: false,
-    icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
-      ],
+    signUp: false
   }),
+  methods: {
+      onClickChild (value) {
+        this.signUp=value
+    }
+  }
 };
 </script>
 
