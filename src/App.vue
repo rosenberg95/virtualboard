@@ -43,6 +43,22 @@
           </v-btn>
       </v-overlay>
     </v-main>
+    
+    <v-footer
+      dark
+      padless
+    >
+      <v-card
+        class="flex"
+        flat
+        tile
+      >
+        <v-card-text class="py-2 white--text text-center">
+          {{ new Date().getFullYear() }} — <strong><a href="https://pouls-live-resume.herokuapp.com/">Poul Rosenberg</a></strong>
+        </v-card-text>
+      </v-card>
+    </v-footer>
+
   </v-app>
 </template>
 
@@ -62,6 +78,12 @@ export default {
     absolute: true,
     opacity: 0.7,
     overlay: false,
+    icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-linkedin',
+        'mdi-instagram',
+      ],
   }),
 };
 </script>
