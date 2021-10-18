@@ -6,7 +6,7 @@
                     <v-card-text>
                         <v-container>
                             <v-card-title>Log Ind</v-card-title>
-                            <form>
+                            <form @submit.prevent="onSignIn">
                                 <v-layout row>
                                     <v-flex xs12>
                                         <v-text-field
@@ -49,6 +49,8 @@
 
 
 <script>
+import * as firebase from 'firebase/compat'
+require('firebase/auth')
 export default {
     name: "signup",
     data() {
@@ -61,6 +63,13 @@ export default {
     methods: {
         pressedClose() {
             this.$emit('clicked', false)
+        },
+        onSignIn () {
+            console.log(this.email)
+            firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+                .then(console.log("logget ind"))
+                .catch(error => console.log(error))
+
         }
     }
 

@@ -6,7 +6,7 @@
                     <v-card-text>
                         <v-container>
                             <v-card-title>Opret bruger</v-card-title>
-                            <form>
+                            <form @submit.prevent="onSignUp">
                                 <v-layout row>
                                     <v-flex xs12>
                                         <v-text-field
@@ -48,7 +48,7 @@
                                         id="confirmPassword"
                                         v-model="confirmPassword"
                                         type="password"
-                                        required> </v-text-field>
+                                        :rules=[comparePasswords]> </v-text-field>
                                     </v-flex>
                                 </v-layout>
                                 <v-layout row>
@@ -71,6 +71,8 @@
 
 
 <script>
+import * as firebase from 'firebase/compat'
+require('firebase/auth')
 export default {
     name: "signup",
     data() {
@@ -80,9 +82,20 @@ export default {
             confirmPassword: ''
         }
     },
+    computed: {
+        comparePasswords() {
+            return this.password !== this.confirmPassword ? 'Passwords do not match' : true
+        }
+    },
     methods: {
         pressedClose() {
             this.$emit('clicked', false)
+        },
+        onSignUp () {
+            console.log(this.email)
+            firebase.auth().createUserWithEmailAndPassword(this.email,this.password)
+                .then(console.log("bruger oprettet"))
+                .catch(error => console.log(error))
         }
     }
 
