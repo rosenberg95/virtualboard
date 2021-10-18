@@ -1,5 +1,6 @@
+
 <template>
-  <v-container>
+    <v-container>
       <v-layout row wrap> 
         <v-flex xs12 sm6 md4 lg3 v-for="element in cards" :key="element.title">
             <v-card class="ma-3" max-width="374" height=280px>
@@ -29,13 +30,8 @@
                 </div>
                 
             </v-card> 
-
         </v-flex>
-
       </v-layout>
-
-
-   
   </v-container>
 </template>
 
@@ -45,7 +41,7 @@
     name: 'Board',
 
 
-    // Test data
+    // Test data ideelt set bliver det hentet fra firebase database
     data: () => ({
         cards: [
             {type: 'text', 

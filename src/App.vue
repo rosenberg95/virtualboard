@@ -14,7 +14,6 @@
           transition="scale-transition"
           width="40"
         />
-
         <v-toolbar-title>Virtual Board</v-toolbar-title>
       </div>
 
@@ -47,9 +46,8 @@
         >
           <SignIn @clicked="onClickChild"></SignIn>
       </v-overlay>
-
-
       </v-row>
+      <p>\n</p>
       <Board/>
     </v-main>
     
