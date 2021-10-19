@@ -1,3 +1,4 @@
+test
 # About
 This project is made by Poul Rosenberg as [the Virtual White Board case](https://github.com/ibmcicdk/CIC-HIRING-TEST/tree/master/VirtualWhiteBoard) for IBM CIC.
 
