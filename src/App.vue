@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar
+    <!--  TODO MOVE TO HEADER COMPONENT -->
+    <v-app-bar 
       app
       color="primary"
       dark
@@ -20,15 +21,18 @@
       <v-spacer></v-spacer>
 
       <v-btn color="primary"  @click="signUp = !signUp" left>
-      <v-icon left>mdi-account-circle</v-icon>
+      <v-icon left>mdi-account-multiple</v-icon>
          Opret
       </v-btn>
       <v-btn color="primary"  @click="signIn = !signIn">
       <v-icon left>mdi-account-circle</v-icon>
          Log in
       </v-btn>
-
     </v-app-bar>
+
+
+
+
 
     <v-main>
       <v-row justify="center">
@@ -48,31 +52,20 @@
       </v-overlay>
       </v-row>
       <p>\n</p>
+
+      <Toolbox/>
       <Board/>
     </v-main>
-    
-    <v-footer
-      dark
-      padless
-    >
-      <v-card
-        class="flex"
-        flat
-        tile
-      >
-        <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — <strong><a href="https://pouls-live-resume.herokuapp.com/">Poul Rosenberg</a></strong>
-        </v-card-text>
-      </v-card>
-    </v-footer>
-
+    <Footer/>
   </v-app>
 </template>
 
 <script>
+import Toolbox from './components/Toolbox.vue';
 import Board from './components/Board';
 import SignUp from './components/SignUp.vue';
 import SignIn from './components/SignIn.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
@@ -80,7 +73,9 @@ export default {
   components: {
     Board,
     SignUp,
-    SignIn
+    SignIn,
+    Toolbox,
+    Footer,
   },
 
   data: () => ({

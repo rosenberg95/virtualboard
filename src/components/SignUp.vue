@@ -5,7 +5,9 @@
                 <v-card width=500px>
                     <v-card-text>
                         <v-container>
-                            <v-card-title>Opret bruger</v-card-title>
+                            <v-list-item class="text-h5">
+                                <v-icon left>mdi-account-multiple</v-icon> Opret bruger
+                            </v-list-item>
                             <form @submit.prevent="onSignUp">
                                 <v-layout row>
                                     <v-flex xs12>

@@ -5,7 +5,9 @@
                 <v-card width=500px>
                     <v-card-text>
                         <v-container>
-                            <v-card-title>Log Ind</v-card-title>
+                            <v-list-item class="text-h5">
+                            <v-icon left>mdi-account-circle</v-icon>Log Ind
+                            </v-list-item>
                             <form @submit.prevent="onSignIn">
                                 <v-layout row>
                                     <v-flex xs12>
