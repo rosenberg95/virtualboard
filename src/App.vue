@@ -42,14 +42,14 @@
           :value="signUp"
         >
           <SignUp @clicked="onClickChild"></SignUp>
-      </v-overlay>
-      <v-overlay
-          :absolute="absolute"
-          :opacity="0.7"
-          :value="signIn"
-        >
-          <SignIn @clicked="onClickChild"></SignIn>
-      </v-overlay>
+        </v-overlay>
+        <v-overlay
+            :absolute="absolute"
+            :opacity="0.7"
+            :value="signIn"
+          >
+            <SignIn @clicked="onClickChild"></SignIn>
+        </v-overlay>
       </v-row>
       <p>\n</p>
 

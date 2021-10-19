@@ -22,7 +22,7 @@
                 <div v-else-if="element.type == 'vid'">
                     <v-card-title><v-icon left>mdi-youtube</v-icon>{{ element.title }} </v-card-title>
                     <youtube 
-                    fitParent="true"
+                    fitParent=true
                     :video-id="element.vidurl"
                     ref="youtube" 
                     @playing="playing"
