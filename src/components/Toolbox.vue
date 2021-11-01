@@ -19,7 +19,7 @@
                     Toolbox
                 </v-list-item-title>
                 <v-list-item-subtitle>Du er logget ind som:</v-list-item-subtitle>
-                <v-list-item-subtitle><em>En lille luder</em></v-list-item-subtitle>
+                <v-list-item-subtitle><em>Navn Efternavn</em></v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
             </v-list>
